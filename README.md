@@ -1,5 +1,5 @@
 # 📚🐛 Bookworm-Reader
-Convert's PDF, Plain-text and image files into an audio file offline.
+Convert's PDF, Plain-text and image files into an audio file in a bunch of different languages offline.
 
 # What is this?
 This is a simple application that provides a Web UI that lets you make audio files from plain text, PDF's and OCR all offline and for free.
