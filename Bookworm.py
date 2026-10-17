@@ -32,45 +32,55 @@ def Read():
 #Checks language on refresh
 def check_languages():
     if "en_US-danny-low.onnx.json" not in installed_models:
-        st.error("English Not installed")
+        if startpage == True:
+            st.error("English Not installed")
     elif "en_US-danny-low.onnx" not in installed_models:
-        st.error("English Not installed")
+        if startpage == True:
+            st.error("English Not installed")
     else:
         if startpage == True:
             st.success("English Installed")
         installed_voices.append("English")
     #Chekc FR
     if "fr_FR-gilles-low.onnx.json" not in installed_models:
-        st.error("French Not installed")
+        if startpage == True:
+            st.error("French Not installed")
     elif "fr_FR-gilles-low.onnx" not in installed_models:
-        st.error("French Not installed")
+        if startpage == True:
+            st.error("French Not installed")
     else:
         if startpage == True:
             st.success("French Installed")
         installed_voices.append("French")
     #Check RU
     if "ru_RU-dmitri-medium.onnx.json" not in installed_models:
-        st.error("Russian Not installed")
+        if startpage == True:
+            st.error("Russian Not installed")
     elif "ru_RU-dmitri-medium.onnx" not in installed_models:
-        st.error("Russian Not installed")
+        if startpage == True:
+            st.error("Russian Not installed")
     else:
         if startpage == True:
             st.success("Russian Installed")
         installed_voices.append("Russian")
     #Check KO
     if "ko_KR-kss-medium.onnx.json" not in installed_models:
-        st.error("Korean Not installed")
+        if startpage == True:
+            st.error("Korean Not installed")
     elif "ko_KR-kss-medium.onnx" not in installed_models:
-        st.error("Korean Not installed")
+        if startpage == True:
+            st.error("Korean Not installed")
     else:
         if startpage == True:    
             st.success("Korean Installed")
         installed_voices.append("Korean")
     #Check AR
     if "ar_JO-kareem-medium.onnx.json" not in installed_models:
-        st.error("Arabic Not installed")
+        if startpage == True:
+            st.error("Arabic Not installed")
     elif "ar_JO-kareem-medium.onnx" not in installed_models:
-        st.error("Arabic Not installed")
+        if startpage == True:
+            st.error("Arabic Not installed")
     else:
         if startpage == True:
             st.success("Arabic Installed")
