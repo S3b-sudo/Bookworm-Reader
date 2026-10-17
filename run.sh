@@ -1,0 +1,1 @@
+source BookW/bin/activate && streamlit run Bookworm.py
