@@ -6,8 +6,13 @@ This is a simple application that provides a Web UI that lets you make audio fil
 
 # Planned features
 ✅ PDF reading
+
 ✅ Plain Text Reading
+
 □  OCR for PDF's without text data and images
+
 □  Better Home Menu
-□  Installer
+
+✅ Installer
+
 □  More if i think of anything
