@@ -3,11 +3,13 @@ from streamlit_advanced_audio import audix, WaveSurferOptions
 from streamlit_option_menu import option_menu
 from streamlit_pdf_viewer import pdf_viewer
 from pypdf import PdfReader, PdfWriter
+from PIL import Image
 import os
 import webbrowser
 import time
 import piper
 import wave
+import pytesseract
 
 voices_path = "voices/"
 installed_models = os.listdir(voices_path)
@@ -127,7 +129,7 @@ def Read_PDF(startpage, endpage, pdf_reader, lingo, filename):
 st.title("📚🐛 Bookworm")
 st.set_page_config(page_title = "Bookworm", page_icon = "🐛")
 
-selected2 = option_menu(None, ["Home", "Read PDF", "Read Plain Text"], 
+selected2 = option_menu(None, ["Home", "Read PDF", "Read Plain Text", "OCR"], 
     icons=['house', 'file-earmark', "card-text"], 
     menu_icon="cast", default_index=0, orientation="horizontal")
 
@@ -306,3 +308,28 @@ if selected2 == "Read PDF":
 
         else:
             st.error("This is not a PDF file")
+#Web UI for OCR
+if selected2 == "OCR":
+    OCR_type = st.selectbox("Choose OCR Type",("Image","PDF"))
+    
+    if OCR_type == "Image":
+        st.text("Supported formats: PNG, JPEG. More comming soon")
+        uploaded_file = st.file_uploader("Choose an Image file", accept_multiple_files=False)
+        if uploaded_file is not None:
+            if uploaded_file.type == "image/png" or uploaded_file.type == "image/jpeg":
+                st.image(uploaded_file)
+                filename = st.text_input("Filename")
+                st.text("Use thresholding if your text isn't being detected")
+                editing = st.toggle("Thresholding")
+                if editing:
+                    threshold_ammount = st.slider("Threshold Ammount:", 1, 150)
+                st.button("Read", type="primary", width="stretch")
+            else:
+                st.error("Not a valid image file")
+
+
+    if OCR_type == "PDF":
+        uploaded_file = st.file_uploader("Choose a PDF file", accept_multiple_files=False)
+        if uploaded_file is not None:
+            if uploaded_file.type == "application/pdf":
+                st.error("This functionality is not yet implemented. Sorry :()")
