@@ -16,3 +16,24 @@ This is a simple application that provides a Web UI that lets you make audio fil
 ✅ Installer
 
 □  More if i think of anything
+
+#Screenshots
+![Alt](Screenshots/1.png)
+
+Landing
+
+![Alt](Screenshots/2.png)
+![Alt](Screenshots/3.png)
+
+PDF Reader
+
+![Alt](Screenshots/4.png)
+
+Plain Text Reader
+
+![Alt](Screenshots/5.png)
+
+Audio Preview
+
+## Acknowledgments
+Everything listed in `requirements.txt`
